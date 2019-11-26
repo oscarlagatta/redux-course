@@ -20,3 +20,21 @@
 .App-link {
   color: #09d3ac;
 }
+
+.Todo-App {
+  padding-top: 20px;
+  display: inline-block;
+  text-align: left;
+}
+
+input {
+  font-size: 20px;
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style-type: none;
+}
