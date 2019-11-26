@@ -8,7 +8,9 @@ function App(props) {
   return (
     <div className="App">      
       <div className="Todo-App">
-        <TodoForm />
+        <TodoForm 
+        currentTodo={props.currentTodo} 
+        changeCurrent={props.changeCurrent}/>
         <TodoList todos={props.todos}/>
       </div>
     </div>
