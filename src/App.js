@@ -23,13 +23,4 @@ function App(props) {
 
 // export default App;
 
-const mapStateToProps = state => state;
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      updateCurrent
-    },
-    dispatch
-  );
-const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
-export default ConnectedApp;
+export default connect(state => state, { updateCurrent })(App);
