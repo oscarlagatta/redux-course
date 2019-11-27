@@ -5,17 +5,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import store from "./store";
-import {bindActionCreators} from 'redux';
-import { updateCurrent } from "./reducers/todo";
 
-
-
-const todoChangeHandler = val => store.dispatch(updateCurrent(val));
-
-
-const actions = bindActionCreators({
-  updateCurrent
-}, store.dispatch);
 /**
  * The Provider component is going to take care of getting the state and 
  * subscribing to state changes for us.
@@ -26,7 +16,7 @@ const actions = bindActionCreators({
  */
 ReactDOM.render(
   <Provider store={store}>
-    <App changeCurrent={actions.updateCurrent} />
+    <App />
   </Provider>,
   document.getElementById("root")
 );

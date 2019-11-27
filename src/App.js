@@ -4,6 +4,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import { bindActionCreators } from "redux";
+import { updateCurrent } from "./reducers/todo";
 
 function App(props) {
   return (
@@ -11,7 +13,7 @@ function App(props) {
       <div className="Todo-App">
         <TodoForm
           currentTodo={props.currentTodo}
-          changeCurrent={props.changeCurrent}
+          changeCurrent={props.updateCurrent}
         />
         <TodoList todos={props.todos} />
       </div>
@@ -21,18 +23,13 @@ function App(props) {
 
 // export default App;
 
-/**
- * MapStateToProps is a function that's going to accept the entire state
- * and return an object that represents the subset of the state we want
- * to pass into our component.
- * In this case, we want to pass the entire state, because it only consists
- * of our todos array and our current todo string at this point.
- */
 const mapStateToProps = state => state;
-/**
- * connected app component will receive our state properties as props, 
- * just like when we were passing them in manually, but now the Provider 
- * and the Connect function will work together to make that happen.
- */
-const ConnectedApp = connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      updateCurrent
+    },
+    dispatch
+  );
+const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
 export default ConnectedApp;
