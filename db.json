@@ -24,31 +24,6 @@
       "id": 5,
       "name": "update records",
       "isComplete": false
-    },
-    {
-      "name": "Oscar new todo",
-      "isComplete": false,
-      "id": 6
-    },
-    {
-      "name": "Edu ",
-      "isComplete": false,
-      "id": 7
-    },
-    {
-      "name": "Another Todo",
-      "isComplete": false,
-      "id": 8
-    },
-    {
-      "name": "testing",
-      "isComplete": false,
-      "id": 9
-    },
-    {
-      "name": "another todo",
-      "isComplete": false,
-      "id": 10
     }
   ]
 }
